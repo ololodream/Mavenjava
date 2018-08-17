@@ -1,0 +1,9 @@
+11:43:29.193  [main] INFO  myGroup.RESTAPITest - comment updated
+"11:50:47.236  [main] INFO  myGroup.RESTAPITest - create issue
+"11:50:59.483  [main] INFO  myGroup.RESTAPITest - Issue added. issueId:10127
+"11:50:59.483  [main] ERROR myGroup.RESTAPITest - create issue fail
+"11:50:59.485  [main] INFO  myGroup.RESTAPITest - add comment
+"11:51:00.299  [main] ERROR myGroup.RESTAPITest - issueId:10127
+"11:51:00.325  [main] INFO  myGroup.RESTAPITest - Comment added. commentId:10112
+"11:51:00.326  [main] INFO  myGroup.RESTAPITest - Update Comment
+"

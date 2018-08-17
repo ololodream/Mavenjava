@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+	<Properties>
+		<Property name = "basePath">./logs</Property> <!-- do not hard code patj -->
+	</Properties>
+  <Appenders>
+   
+  	<RollingFile name="File" fileName="${basePath}/prints.log"
+                       filePattern="${basePath}/prints.log-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+              <pattern>%d{HH:mm:ss.SSS}  [%t] %-5level %logger{36} - %msg%n"</pattern>
+            </PatternLayout>
+            <SizeBasedTriggeringPolicy size="500" />
+			<!-- triggering policy size=500
+			-if file> 500kb create one more file   -->
+          </RollingFile>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+  	<!-- 
+	Logger name="myPakage1.Demo" level="trace" additivity = "false">//additivity set as false, otherwise will run twice.
+ 	-->
+  	<Logger name="myGroup.RESTAPITest" level="trace" additivity = "false">
+  	<!--
+  	<root level = "error"> // only error msg
+	<root level = "trace"> // every log
+  	-->
+      <AppenderRef ref="File"/>
+    </Logger>
+    <Root level="Error">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
